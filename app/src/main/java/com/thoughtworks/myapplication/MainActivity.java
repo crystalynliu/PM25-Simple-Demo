@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         cityEditText = (EditText) findViewById(R.id.edit_view_input);
         pm25TextView = (TextView) findViewById(R.id.text_city_pm25);
         pm25ListView = (ListView) findViewById(R.id.list_position_pm25);
+        errorTextView = (TextView)findViewById(R.id.error_message);
 
         loadingDialog = new ProgressDialog(this);
         loadingDialog.setMessage(getString(R.string.loading_message));
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showErrorScreen() {
         hideLoading();
-        errorTextView = (TextView)findViewById(R.id.error_message);
+
         errorTextView.setText(R.string.error_message_query_pm25);
     }
 
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populate(List<PM25> data) {
-
+        errorTextView.setText("");
         List<String> positionList = new ArrayList<String>();
         if (data != null && !data.isEmpty()) {
             pm25TextView.setText(data.get(0).getArea().toString());
@@ -139,8 +140,6 @@ public class MainActivity extends AppCompatActivity {
             adapter = new ArrayAdapter<String>(this,R.layout.list_item,positionList);
             pm25ListView.setAdapter(adapter);
 
-            //PM25 pm25 = data.get(0);
-            //pm25TextView.setText(pm25.getPositionName() + pm25.getQuality());
         }
     }
 }

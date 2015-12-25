@@ -1,0 +1,157 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 77168 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:323), pid=9332, tid=9684
+#
+# JRE version:  (7.0_71-b14) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.71-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000021e8000):  JavaThread "main" [_thread_in_native, id=9684, stack(0x00000000024c0000,0x00000000025c0000)]
+
+Stack: [0x00000000024c0000,0x00000000025c0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.Class.forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;Ljava/lang/Class;)Ljava/lang/Class;+0
+j  java.lang.Class.forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;+43
+j  sun.nio.cs.AbstractCharsetProvider.lookup(Ljava/lang/String;)Ljava/nio/charset/Charset;+86
+j  sun.nio.cs.AbstractCharsetProvider.charsetForName(Ljava/lang/String;)Ljava/nio/charset/Charset;+14
+j  java.nio.charset.Charset.lookupExtendedCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;+10
+j  java.nio.charset.Charset.lookup2(Ljava/lang/String;)Ljava/nio/charset/Charset;+48
+j  java.nio.charset.Charset.lookup(Ljava/lang/String;)Ljava/nio/charset/Charset;+40
+j  java.nio.charset.Charset.isSupported(Ljava/lang/String;)Z+1
+v  ~StubRoutines::call_stub
+j  java.lang.System.initProperties(Ljava/util/Properties;)Ljava/util/Properties;+0
+j  java.lang.System.initializeSystemClass()V+13
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000084f1000 JavaThread "Finalizer" daemon [_thread_blocked, id=7624, stack(0x00000000098e0000,0x00000000099e0000)]
+  0x00000000084ed800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7820, stack(0x00000000096d0000,0x00000000097d0000)]
+=>0x00000000021e8000 JavaThread "main" [_thread_in_native, id=9684, stack(0x00000000024c0000,0x00000000025c0000)]
+
+Other Threads:
+  0x00000000084ea000 VMThread [stack: 0x0000000009510000,0x0000000009610000] [id=5704]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37888K, used 1310K [0x00000000eaa80000, 0x00000000ed480000, 0x0000000100000000)
+  eden space 32768K, 4% used [0x00000000eaa80000,0x00000000eabc7bd8,0x00000000eca80000)
+  from space 5120K, 0% used [0x00000000ecf80000,0x00000000ecf80000,0x00000000ed480000)
+  to   space 5120K, 0% used [0x00000000eca80000,0x00000000eca80000,0x00000000ecf80000)
+ ParOldGen       total 86016K, used 0K [0x00000000c0000000, 0x00000000c5400000, 0x00000000eaa80000)
+  object space 86016K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c5400000)
+ PSPermGen       total 21504K, used 1297K [0x00000000bae00000, 0x00000000bc300000, 0x00000000c0000000)
+  object space 21504K, 6% used [0x00000000bae00000,0x00000000baf444a8,0x00000000bc300000)
+
+Card table byte_map: [0x00000000055c0000,0x00000000057f0000] byte_map_base: 0x0000000004fe9000
+
+Polling page: 0x0000000000210000
+
+Code Cache  [0x00000000025c0000, 0x0000000002830000, 0x00000000055c0000)
+ total_blobs=113 nmethods=0 adapters=89 free_code_cache=48799Kb largest_free_block=49970176
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (1 events):
+Event: 0.084 Thread 0x00000000021e8000 Threw 0x00000000eaa8f630 at C:\re\jdk7u71\1605\hotspot\src\share\vm\prims\jni.cpp:3991
+
+Events (10 events):
+Event: 0.090 loading class 0x000000000226c440
+Event: 0.090 loading class 0x0000000002258090
+Event: 0.090 loading class 0x0000000002258090 done
+Event: 0.090 loading class 0x000000000226c440 done
+Event: 0.090 loading class 0x000000000226ba70 done
+Event: 0.090 loading class 0x000000000226ba90
+Event: 0.090 loading class 0x000000000226ba90 done
+Event: 0.091 loading class 0x000000000226c530
+Event: 0.091 loading class 0x000000000226c530 done
+Event: 0.119 loading class 0x0000000008444540
+
+
+Dynamic libraries:
+0x000000013f570000 - 0x000000013f5a3000 	C:\Program Files\Java\jdk1.7.0_71\bin\java.exe
+0x0000000077c60000 - 0x0000000077e09000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077900000 - 0x0000000077a20000 	C:\Windows\system32\kernel32.dll
+0x000007fefd9c0000 - 0x000007fefda2c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feffd60000 - 0x000007feffe3b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe8f0000 - 0x000007fefe98f000 	C:\Windows\system32\msvcrt.dll
+0x000007feff960000 - 0x000007feff97f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feffe40000 - 0x000007fefff6d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077b60000 - 0x0000000077c5a000 	C:\Windows\system32\USER32.dll
+0x000007fefe4d0000 - 0x000007fefe537000 	C:\Windows\system32\GDI32.dll
+0x000007fefe8e0000 - 0x000007fefe8ee000 	C:\Windows\system32\LPK.dll
+0x000007fefe990000 - 0x000007fefea59000 	C:\Windows\system32\USP10.dll
+0x000007fefbe60000 - 0x000007fefc054000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007fefdf10000 - 0x000007fefdf81000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefdcd0000 - 0x000007fefdcfe000 	C:\Windows\system32\IMM32.DLL
+0x000007feff850000 - 0x000007feff959000 	C:\Windows\system32\MSCTF.dll
+0x0000000062020000 - 0x00000000620f2000 	C:\Program Files\Java\jdk1.7.0_71\jre\bin\msvcr100.dll
+0x000000005eda0000 - 0x000000005f573000 	C:\Program Files\Java\jdk1.7.0_71\jre\bin\server\jvm.dll
+0x000007fef72e0000 - 0x000007fef72e9000 	C:\Windows\system32\WSOCK32.dll
+0x000007feffc90000 - 0x000007feffcdd000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe8d0000 - 0x000007fefe8d8000 	C:\Windows\system32\NSI.dll
+0x000007fefd880000 - 0x000007fefd8bb000 	C:\Windows\system32\WINMM.dll
+0x0000000077e30000 - 0x0000000077e37000 	C:\Windows\system32\PSAPI.DLL
+0x000000006df20000 - 0x000000006df2f000 	C:\Program Files\Java\jdk1.7.0_71\jre\bin\verify.dll
+0x000000005fd30000 - 0x000000005fd58000 	C:\Program Files\Java\jdk1.7.0_71\jre\bin\java.dll
+0x0000000068c20000 - 0x0000000068c35000 	C:\Program Files\Java\jdk1.7.0_71\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Xmx1024M -Dfile.encoding=GBK -Duser.country=CN -Duser.language=zh -Duser.variant 
+java_command: com.android.dx.command.Main --dex --num-threads=4 --output C:\Users\Crystalyn\Desktop\PM25-Simple-Demo\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0-beta2_0656c0dda11d413e1475e4cb14e4408605105d4c.jar C:\Users\Crystalyn\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-gson\2.0.0-beta2\392c3d09e0f5e7087544093cc0cb23bb9c7af5fa\converter-gson-2.0.0-beta2.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_71
+CLASSPATH=.;C:\Program Files\Java\jdk1.7.0_71\lib\dt.jar;C:\Program Files\Java\jdk1.7.0_71\lib\tools.jar
+PATH=C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;c:\Program Files (x86)\AMD APP\bin\x86_64;c:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\TortoiseSVN\bin;C:\Program Files\Java\jdk1.7.0_71\bin;C:\Program Files\Java\jdk1.7.0_71\jre7\bin;C:\tomcat\lib;C:\tomcat\bin;C:\Program Files (x86)\Skype\Phone\;C:\HashiCorp\Vagrant\bin;E:\°²×°\node\;C:\Users\Crystalyn\AppData\Roaming\npm
+USERNAME=Crystalyn
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8251856k(1907712k free), swap 8266404k(5028k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.71-b01) for windows-amd64 JRE (1.7.0_71-b14), built on Sep 26 2014 16:16:12 by "java_re" with unknown MS VC++:1600
+
+time: Fri Dec 25 20:02:19 2015
+elapsed time: 0 seconds
+

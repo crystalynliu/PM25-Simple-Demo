@@ -6,4 +6,7 @@
     <string name="position_message">Show the Position List</string>
     <string name="city_name">City Name :</string>
     <string name="title_activity_display_details">Datails about Position</string>
+    <string name="position_name">Position Name :</string>
+    <string name="time">DateTime :</string>
+    <string name="quality">Air Quality :</string>
 </resources>
