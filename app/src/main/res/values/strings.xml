@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Query PM2.5 of the City</string>
     <string name="button_query">Query</string>
     <string name="error_message_query_pm25">Please try again</string>
     <string name="loading_message">Loading</string>
+    <string name="position_message">Show the Position List</string>
+    <string name="city_name">City Name :</string>
+    <string name="title_activity_display_details">Datails about Position</string>
 </resources>

@@ -2,7 +2,9 @@ package com.thoughtworks.myapplication.domain;
 
 import com.google.gson.annotations.SerializedName;
 
-public class PM25 {
+import java.io.Serializable;
+
+public class PM25 implements Serializable {
     @SerializedName("position_name")
     private String positionName;
 
@@ -15,12 +17,18 @@ public class PM25 {
     @SerializedName("time_point")
     private String time;
 
+    @SerializedName("station_code")
+    private String stationCode;
+
+    public String getStationCode(){return stationCode;}
+    public void setStationCode(String stationCode){ this.stationCode = stationCode;}
+
     public String getArea(){ return area ;}
     public void setArea(String area){ this.area = area; }
 
     public String getTime(){return time;}
     public void setTime(String time){this.time = time;}
-    
+
     public String getPositionName() {
         return positionName;
     }
